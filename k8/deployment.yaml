@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeployment1
+spec:
+  strategy:
+    type: RollingUpdate
+  replicas: 2
+  selector: 
+    matchLabels:
+      app:  frontend
+  template:
+    metadata:
+      name: myPod
+      labels:
+        app:  frontend
+    spec:
+      containers:
+      -  name: myweb
+         image: priya9soni/appimage:v1 
+         ports:
+         - containerPort: 80
+
