@@ -18,6 +18,7 @@ spec:
       containers:
       -  name: myweb
          image: priya9soni/appimage:v1 
+         imagePullPolish: Always
          ports:
          - containerPort: 80
 
